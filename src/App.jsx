@@ -27,6 +27,13 @@ const bioDataInfo = [
     skills: ["HTML", "CSS", "javaScript"],
     interests: ["Theology", "Reading"],
   },
+  {
+    name: "Kablu",
+    email: "kablu@gmail.com",
+    // phone: "+880154567896",
+    skills: ["HTML", "CSS", "javaScript", "Cooking", "Driving"],
+    interests: ["Fishing", "Traveling"],
+  },
 ];
 
 const EListener = () => {
@@ -49,7 +56,6 @@ function App() {
         </div>
       ))}
       <button onClick={EListener}>Click Me</button>
-      //onChange event jante hobe
     </>
   );
 }
