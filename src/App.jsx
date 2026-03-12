@@ -4,58 +4,25 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import BioData from "./components/BioData";
 
-// data
-const bioDataInfo = [
-  {
-    name: "Irfan",
-    email: "irfan@gmail.com",
-    phone: "+8801254874",
-    skills: ["HTML", "CSS", "javaScript", "React", "Redux", "Nextjs"],
-    interests: ["Theology", "Reading", "Writing", "Football", "Traveling"],
-  },
-  {
-    name: "laban",
-    email: "laban@gmail.com",
-    phone: "+8801486487",
-    skills: ["HTML", "CSS", "javaScript", "React"],
-    interests: ["Theology", "Reading", "Writing", "Football"],
-  },
-  {
-    name: "Rfai",
-    email: "rafi@gmail.com",
-    phone: "+880125487864",
-    skills: ["HTML", "CSS", "javaScript"],
-    interests: ["Theology", "Reading"],
-  },
-  {
-    name: "Kablu",
-    email: "kablu@gmail.com",
-    // phone: "+880154567896",
-    skills: ["HTML", "CSS", "javaScript", "Cooking", "Driving"],
-    interests: ["Fishing", "Traveling"],
-  },
-];
+// event handeller
 
-const EListener = () => {
-  alert("Event has been triggerd!");
-};
 function App() {
+  const [dynamiccounter, setdynamiccouner] = useState(0);
+  const Increase = () => {
+    setdynamiccouner(dynamiccounter + 1);
+  };
+  const Decrease = () => {
+    if (dynamiccounter > 0) {
+      setdynamiccouner(dynamiccounter - 1);
+    }
+  };
   return (
     <>
-      {bioDataInfo.map((bio, ind) => (
-        <div key={ind}>
-          <BioData
-            name={bio.name}
-            email={bio.email}
-            phone={bio.phone}
-            skills={bio.skills}
-            interests={bio.interests}
-          />
-          <hr />
-          <hr />
-        </div>
-      ))}
-      <button onClick={EListener}>Click Me</button>
+      <div>
+        <h2> The coun value is: {dynamiccounter}</h2>
+        <button onClick={Increase}>Increase By 1</button>
+        <button onClick={Decrease}>Decrease By 1</button>
+      </div>
     </>
   );
 }
