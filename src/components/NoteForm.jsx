@@ -6,9 +6,11 @@ const NoteForm = () => {
   const [notes, setNotes] = useState([]);
   const [editMode, setEditMode] = useState(false);
   const [editableNote, setEditableNote] = useState(null);
+
   const changeTitelHandeler = (e) => {
     setNoteTitel(e.target.value);
   };
+
   const submitHandeler = (e) => {
     e.preventDefault();
     if (noteTitel.trim() === "") {
