@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Studentctx } from "../contexts/Studentctx";
 
 const StudentForm = () => {
-  const { submiHandler, studentName, editMode, changeStudentHandler } =
+  const { studentsState, submiHandler, changeStudentHandler } =
     useContext(Studentctx);
   return (
     <div className="form">
@@ -10,11 +10,11 @@ const StudentForm = () => {
         <h2>Add Student Name Here!</h2>
         <input
           type="text"
-          value={studentName}
+          value={studentsState.studentName}
           onChange={changeStudentHandler}
         />
         <button type="submit">
-          {editMode ? "Update Student" : "Add Student"}
+          {studentsState.editMode ? "Update Student" : "Add Student"}
         </button>
       </form>
     </div>

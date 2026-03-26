@@ -2,14 +2,14 @@ import { useContext } from "react";
 import { Studentctx } from "../contexts/Studentctx";
 
 const PresencyStudent = () => {
-  const { students, toggoleList } = useContext(Studentctx);
+  const { studentsState, toggoleList } = useContext(Studentctx);
   return (
     <>
       <div className="presantStudent">
         <h2>Present Student</h2>
         <div className="list">
           <ul>
-            {students
+            {studentsState.students
               .filter((item) => item.isPresant === true)
               .map((student) => (
                 <li key={student.id}>
@@ -26,7 +26,7 @@ const PresencyStudent = () => {
         <h2>Absent Student</h2>
         <div className="list">
           <ul>
-            {students
+            {studentsState.students
               .filter((student) => student.isPresant === false)
               .map((student) => (
                 <li key={student.id}>

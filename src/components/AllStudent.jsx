@@ -3,7 +3,7 @@ import { Studentctx } from "../contexts/Studentctx";
 
 const AllStudents = () => {
   const {
-    students,
+    studentsState,
     editHandeler,
     removeHandeler,
     makePresentHandler,
@@ -14,7 +14,7 @@ const AllStudents = () => {
       <h2>All Stuends </h2>
       <div className="list">
         <ul>
-          {students.map((student) => (
+          {studentsState.students.map((student) => (
             <li key={student.id}>
               {student.name}
               <button onClick={() => editHandeler(student)}>Edit</button>
